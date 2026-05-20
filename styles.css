@@ -1351,11 +1351,12 @@ body.dark-mode .transaction-table th {
 @media (max-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  body {
+  .app-container {
     flex-direction: column;
   }
 
@@ -1363,55 +1364,96 @@ body.dark-mode .transaction-table th {
     width: 100%;
     height: auto;
     position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding: 16px 20px;
+    z-index: 100;
   }
 
   .sidebar-header {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .sidebar-nav {
     flex-direction: row;
     overflow-x: auto;
-    gap: 4px;
-    padding-bottom: 8px;
+    gap: 8px;
+    padding-bottom: 6px;
+    /* Hide scrollbar for clean touch swipe */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-item {
-    padding: 10px 14px;
+    padding: 8px 12px;
     font-size: 13px;
     white-space: nowrap;
-    gap: 8px;
+    gap: 6px;
   }
 
   .sidebar-footer {
-    display: none; /* Hide toggle bar on mobile for simplicity, or fit it differently */
+    display: none;
   }
 
   .main-content {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
-    gap: 20px;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .app-header {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .app-header h1 {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .dashboard-box {
+    padding: 18px 16px;
+    gap: 16px;
+  }
+
+  .kpi-grid {
+    gap: 16px;
+  }
+
+  .transaction-table th,
+  .transaction-table td {
+    padding: 12px 8px;
+    font-size: 13px;
   }
 
   .settings-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .modal-box {
+    width: calc(100% - 32px);
     margin: 16px;
     padding: 20px;
   }
 
   .form-row {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+  }
+
+  .filter-bar {
+    padding: 16px;
+  }
+
+  .filter-group-row {
+    gap: 10px;
   }
 }
