@@ -1088,3 +1088,7 @@ function showToast(message, type = 'info') {
     });
   }, 3500);
 }
+
+// Expose functions to global window object for inline HTML onclick attributes
+window.editTransaction = editTransaction;
+window.deleteTransaction = deleteTransaction;
