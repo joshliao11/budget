@@ -1,0 +1,17 @@
+{
+  "name": "apex-budget",
+  "version": "1.0.0",
+  "description": "Premium glassmorphic bookkeeping and budget web application",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "gh-pages": "^6.1.1"
+  }
+}
