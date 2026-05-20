@@ -1427,10 +1427,21 @@ body.dark-mode .transaction-table th {
     gap: 16px;
   }
 
+  .transaction-table {
+    min-width: 600px;
+  }
+
   .transaction-table th,
   .transaction-table td {
     padding: 12px 8px;
     font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .transaction-table td:nth-child(3),
+  .transaction-table th:nth-child(3) {
+    white-space: normal;
+    min-width: 140px;
   }
 
   .settings-grid {
