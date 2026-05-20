@@ -1496,7 +1496,36 @@ body.dark-mode .transaction-table th {
   }
 
   .kpi-grid {
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .kpi-card {
+    padding: 14px 12px;
+    gap: 8px;
+    border-radius: var(--radius-md);
+  }
+
+  .kpi-label {
+    font-size: 11px;
+  }
+
+  .kpi-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .kpi-icon i {
+    width: 14px;
+    height: 14px;
+  }
+
+  .kpi-value {
+    font-size: 20px;
+  }
+
+  .kpi-footer {
+    font-size: 11px;
   }
 
   .transaction-table {
