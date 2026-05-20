@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initForms();
   initSettingsActions();
+  initMobileMenu();
   
   // Set default form date to today
   document.getElementById('tx-date').value = new Date().toISOString().split('T')[0];
@@ -1092,3 +1093,42 @@ function showToast(message, type = 'info') {
 // Expose functions to global window object for inline HTML onclick attributes
 window.editTransaction = editTransaction;
 window.deleteTransaction = deleteTransaction;
+
+// 15. Mobile Menu Controller
+function initMobileMenu() {
+  const hamburgerBtn = document.getElementById('btn-hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  
+  if (!hamburgerBtn || !sidebar || !overlay) return;
+  
+  const toggleMenu = () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    // Change hamburger icon dynamically
+    const icon = hamburgerBtn.querySelector('i');
+    if (sidebar.classList.contains('active')) {
+      icon.setAttribute('data-lucide', 'x');
+    } else {
+      icon.setAttribute('data-lucide', 'menu');
+    }
+    lucide.createIcons();
+  };
+  
+  const closeMenu = () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    const icon = hamburgerBtn.querySelector('i');
+    icon.setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
+  };
+  
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  
+  // Close menu when clicking navigation items
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+    item.addEventListener('click', closeMenu);
+  });
+}
