@@ -17,11 +17,24 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <!-- Custom Stylesheet -->
-  <script type="module" crossorigin src="./assets/index-yTjub34m.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CRrR2fa6.css">
+  <script type="module" crossorigin src="./assets/index-9b8ckvur.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CWdzZJOE.css">
 </head>
 <body class="dark-mode"> <!-- Default to premium dark mode -->
   <div class="app-container">
+    
+    <!-- Mobile Header / Top Bar -->
+    <div class="mobile-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <i data-lucide="wallet"></i>
+        </div>
+        <span class="logo-text">Apex<span>Budget</span></span>
+      </div>
+      <button class="hamburger-btn" id="btn-hamburger" aria-label="切換選單">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
     
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
@@ -421,6 +434,9 @@
     </div>
   </div>
   
+  <!-- Sidebar Drawer Overlay for Mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
   <!-- Custom Alert/Toast Notification System -->
   <div class="toast-container" id="toast-container"></div>
   
